@@ -59,7 +59,7 @@ def prediction():
     classifier = svm.SVC(kernel='rbf')
 
     # setting the saved trained values from stored JSON file
-    svc_attr = json.load(open('../dependencies/saved_models/water_quality_svm.json'))
+    svc_attr = json.load(open('project/dependencies/saved_models/water_quality_svm.json'))
     svc_attr.pop('feature_names_in_', None)
 
     for k, v in svc_attr.items():
@@ -87,7 +87,7 @@ def prediction():
         generic_svm = SVR(kernel='rbf')
 
         # setting the saved trained values from stored JSON file
-        attr = json.load(open('../dependencies/saved_models/saved_regressor_0.json'))
+        attr = json.load(open('project/dependencies/saved_models/saved_regressor_0.json'))
 
         for k, v in attr.items():
             if isinstance(v, list):
@@ -101,7 +101,7 @@ def prediction():
         generic_svm = SVR(kernel='rbf')
 
         # setting the saved trained values from stored JSON file
-        attr = json.load(open('../dependencies/saved_models/saved_regressor_1.json'))
+        attr = json.load(open('project/dependencies/saved_models/saved_regressor_1.json'))
 
         for k, v in attr.items():
             if isinstance(v, list):
@@ -115,7 +115,7 @@ def prediction():
         generic_svm = SVR(kernel='rbf')
 
         # setting the saved trained values from stored JSON file
-        attr = json.load(open('../dependencies/saved_models/saved_regressor_2.json'))
+        attr = json.load(open('project/dependencies/saved_models/saved_regressor_2.json'))
 
         for k, v in attr.items():
             if isinstance(v, list):
@@ -129,7 +129,7 @@ def prediction():
         generic_svm = SVR(kernel='rbf')
 
         # setting the saved trained values from stored JSON file
-        attr = json.load(open('../dependencies/saved_models/saved_regressor_3.json'))
+        attr = json.load(open('project/dependencies/saved_models/saved_regressor_3.json'))
 
         for k, v in attr.items():
             if isinstance(v, list):
@@ -143,7 +143,7 @@ def prediction():
         generic_svm = SVR(kernel='rbf')
 
         # setting the saved trained values from stored JSON file
-        attr = json.load(open('../dependencies/saved_models/saved_regressor_4.json'))
+        attr = json.load(open('project/dependencies/saved_models/saved_regressor_4.json'))
 
         for k, v in attr.items():
             if isinstance(v, list):
@@ -157,7 +157,7 @@ def prediction():
         generic_svm = SVR(kernel='rbf')
 
         # setting the saved trained values from stored JSON file
-        attr = json.load(open('../dependencies/saved_models/saved_regressor_5.json'))
+        attr = json.load(open('project/dependencies/saved_models/saved_regressor_5.json'))
 
         for k, v in attr.items():
             if isinstance(v, list):
@@ -171,7 +171,7 @@ def prediction():
         generic_svm = SVR(kernel='rbf')
 
         # setting the saved trained values from stored JSON file
-        attr = json.load(open('../dependencies/saved_models/saved_regressor_6.json'))
+        attr = json.load(open('project/dependencies/saved_models/saved_regressor_6.json'))
 
         for k, v in attr.items():
             if isinstance(v, list):
