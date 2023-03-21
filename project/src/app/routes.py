@@ -14,7 +14,7 @@
 
 # imports
 from flask import render_template
-from app import flask_app
+from project.src.app import flask_app
 import pickle
 from flask import request
 import json
