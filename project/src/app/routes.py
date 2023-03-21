@@ -22,6 +22,7 @@ import codecs
 import numpy as np
 from sklearn import svm
 from sklearn.svm import SVR
+import random
 
 
 #### helper functions
@@ -57,6 +58,7 @@ def home():
 @flask_app.route("/predict")
 def prediction():
     classifier = svm.SVC(kernel='rbf')
+    return f"[{random.choice([0, 1])}] {random.choice([0, 1])}"
 
     # setting the saved trained values from stored JSON file
     svc_attr = json.load(open('project/dependencies/saved_models/water_quality_svm.json'))
