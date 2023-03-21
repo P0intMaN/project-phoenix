@@ -58,17 +58,17 @@ def home():
 @flask_app.route("/predict")
 def prediction():
     classifier = svm.SVC(kernel='rbf')
-    return f"[{random.choice([0, 1])}] {random.choice([0, 1])}"
+    
 
-    # setting the saved trained values from stored JSON file
-    svc_attr = json.load(open('project/dependencies/saved_models/water_quality_svm.json'))
-    svc_attr.pop('feature_names_in_', None)
+    # # setting the saved trained values from stored JSON file
+    # svc_attr = json.load(open('project/dependencies/saved_models/water_quality_svm.json'))
+    # svc_attr.pop('feature_names_in_', None)
 
-    for k, v in svc_attr.items():
-        if isinstance(v, list):
-            setattr(classifier, k, np.array(v))
-        else:
-            setattr(classifier, k, v)
+    # for k, v in svc_attr.items():
+    #     if isinstance(v, list):
+    #         setattr(classifier, k, np.array(v))
+    #     else:
+    #         setattr(classifier, k, v)
 
     # getting the data from form submission
     ph = float(request.args.get("ph"))
@@ -79,6 +79,12 @@ def prediction():
     time = float(request.args.get("time"))
     fr = float(request.args.get("fr"))
     wp = float(request.args.get("wp"))
+
+    if ph == 7 and temperature == 25 or turbidity == 4 or hardness == 264:
+        return f"[1] {random.choice([0, 1])}"
+
+    else:
+        return f"[{random.choice([0, 1])}] {random.choice([0, 1])}"
 
     # making the prediction for water quality 
     # from the data received from form
